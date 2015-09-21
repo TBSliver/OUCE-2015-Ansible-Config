@@ -1,0 +1,10 @@
+---
+
+- name: Install sudo
+  apt:
+    pkg: sudo
+    state: latest
+    install_recommends: no
+    update_cache: yes
+    # 10 minutes
+    cache_valid_time: 600

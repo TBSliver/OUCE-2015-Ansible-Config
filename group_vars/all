@@ -1,0 +1,25 @@
+---
+
+# Main Ansible Worker
+ansible_user:
+  - {
+      uid: 1050,
+      gid: 1050,
+      name: ansible,
+      group_name: ansible,
+      comment: "Ansible Worker User"
+    }
+
+ansible_ssh_users:
+  - me
+
+user_list:
+  - {
+      uid: 1002,
+      name: me,
+      gid: 100,
+      group_name: users,
+      extra_groups: sudo,
+      comment: "Me Myself & I",
+      password_hash: $6$4j6VfyHybISkDq$EQGm/y6Kvjkf3uG76cOnbtfiZd7539qj5USjeGv8q.i2.AAg38af9eTuB0TGt8ZTIHvxqqcvGUJ.OuapyQJHY/
+    }

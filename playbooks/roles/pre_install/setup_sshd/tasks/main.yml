@@ -1,0 +1,19 @@
+---
+
+- name: Disable root SSH access
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin no"
+    state: present
+  notify:
+    - Restart sshd
+
+- name: Disable password authentication
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^(#)?PasswordAuthentication"
+    line: "PasswordAuthentication no"
+    state: present
+  notify:
+    - Restart sshd

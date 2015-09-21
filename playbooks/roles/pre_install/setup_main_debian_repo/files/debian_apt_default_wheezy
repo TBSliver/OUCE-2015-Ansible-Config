@@ -1,0 +1,10 @@
+# Debian sources.list file set from Ansible
+
+deb     http://ftp.uk.debian.org/debian/ wheezy main contrib non-free
+deb-src http://ftp.uk.debian.org/debian/ wheezy main contrib non-free
+
+deb     http://ftp.uk.debian.org/debian/ wheezy-updates main contrib non-free
+deb-src http://ftp.uk.debian.org/debian/ wheezy-updates main contrib non-free
+
+deb     http://security.debian.org/ wheezy/updates main contrib non-free
+deb-src http://security.debian.org/ wheezy/updates main contrib non-free

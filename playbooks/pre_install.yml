@@ -1,0 +1,14 @@
+---
+
+- name: Pre Install Settings
+  hosts: all
+  user: root
+  sudo: no
+
+  roles:
+    - pre_install/setup_main_debian_repo
+    - pre_install/setup_sudo
+    - pre_install/setup_ansible_user
+    - maintenance/ansible_ssh_keys
+    # Changing settings to sshd after keys set up
+    - pre_install/setup_sshd

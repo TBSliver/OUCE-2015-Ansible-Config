@@ -1,0 +1,4 @@
+log/*
+pubkeys/*
+hosts
+playbooks/special/*

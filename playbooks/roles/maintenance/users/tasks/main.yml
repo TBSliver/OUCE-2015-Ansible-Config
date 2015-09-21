@@ -1,0 +1,24 @@
+---
+
+- name: Create Required Groups
+  group:
+    name: "{{ item.group_name }}"
+    gid: "{{ item.gid }}"
+  with_items: user_list
+
+- name: Setup Required Users
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    group: "{{ item.group_name }}"
+    groups: "{{ item.extra_groups }}"
+    password: "{{ item.password_hash }}"
+    comment: "{{ item.comment }}"
+    shell: /bin/bash
+  with_items: user_list
+
+- name: Install ssh Keys for Users
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ lookup( 'file', '../../../../../pubkeys/' + item.name + '.pub' ) }}"
+  with_items: user_list

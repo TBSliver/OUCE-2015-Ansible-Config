@@ -1,0 +1,27 @@
+---
+
+- name: Create Ansible Group
+  group:
+    name: "{{ item.group_name }}"
+    gid: "{{ item.gid }}"
+  with_items: ansible_user
+
+- name: create Ansible User
+  user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    group: "{{ item.group_name }}"
+    password: "*"
+    comment: "{{ item.comment }}"
+    shell: /bin/bash
+  with_items: ansible_user
+
+- name: Grant password-less sudo for Ansible User
+  template:
+    src: sudoers_ansible
+    dest: /etc/sudoers.d/{{ item.uid }}_ansible
+    owner: root
+    group: root
+    mode: 0440
+    validate: "visudo -cf %s"
+  with_items: ansible_user

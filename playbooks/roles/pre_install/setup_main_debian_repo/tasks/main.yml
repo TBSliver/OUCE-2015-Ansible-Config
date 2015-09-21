@@ -1,0 +1,14 @@
+---
+
+- name: Setup Main Debian Apt Sources.list
+  copy:
+    src: "debian_apt_{{ debian_apt_source }}"
+    dest: /etc/apt/sources.list
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - apt update
+
+# immediately flush all notifiers, as we need this updated immediately
+- meta: flush_handlers
