@@ -6,4 +6,5 @@
   sudo: yes
 
   roles:
+    - install_tools
     - setup_opennms_apt
