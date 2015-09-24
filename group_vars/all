@@ -2,13 +2,11 @@
 
 # Main Ansible Worker
 ansible_user:
-  - {
-      uid: 1050,
-      gid: 1050,
-      name: ansible,
-      group_name: ansible,
-      comment: "Ansible Worker User"
-    }
+  uid: 1050
+  gid: 1050
+  name: ansible
+  group_name: ansible
+  comment: "Ansible Worker User"
 
 ansible_ssh_users:
   - me

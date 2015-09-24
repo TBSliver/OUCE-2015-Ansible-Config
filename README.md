@@ -1,6 +1,8 @@
 # Requirements
 
 - Ansible version 1.7.2 (or newer)
+- sshpass
+  - used for pre-install for hiding the ssh password
 
 # Main User
 
