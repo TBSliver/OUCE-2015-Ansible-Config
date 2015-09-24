@@ -1,0 +1,9 @@
+---
+
+- name: Install OpenNMS
+  hosts: opennms
+  user: ansible
+  sudo: yes
+
+  roles:
+    - setup_opennms_apt

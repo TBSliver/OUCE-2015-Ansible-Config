@@ -4,3 +4,5 @@
 [opennms:vars]
 # choice of: default_wheezy, bytemark_wheezy, office_wheezy
 debian_apt_source = default_wheezy
+# choice of: default_16, office_16
+opennms_apt_source = office_16

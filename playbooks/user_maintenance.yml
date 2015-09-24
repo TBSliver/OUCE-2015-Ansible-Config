@@ -1,0 +1,10 @@
+---
+
+- name: User Maintenance
+  hosts: all
+  user: ansible
+  sudo: yes
+
+  roles:
+    - maintenance/ansible_ssh_keys
+    - maintenance/users

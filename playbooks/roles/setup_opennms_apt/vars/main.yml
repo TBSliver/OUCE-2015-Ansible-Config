@@ -1,0 +1,10 @@
+---
+
+opennms_apt:
+  default_16:
+    - "deb http://debian.opennms.org opennms-16 main"
+    - "deb-src http://debian.opennms.org opennms-16 main"
+  office_16:
+    - "deb http://192.168.2.127:3142/debian.opennms.org opennms-16 main"
+    - "deb-src http://192.168.2.127:3142/debian.opennms.org opennms-16 main"
+
