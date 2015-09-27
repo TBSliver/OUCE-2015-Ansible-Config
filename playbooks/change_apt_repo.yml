@@ -1,12 +1,11 @@
 ---
 
-- name: Install OpenNMS
-  hosts: opennms
+- name: Change Apt Repo
+  hosts: all
   user: ansible
   sudo: yes
 
   roles:
-    - install_tools
     - setup_opennms_apt
+    - pre_install/setup_main_debian_repo
     - maintenance/flush_handlers
-    - install_oracle_java

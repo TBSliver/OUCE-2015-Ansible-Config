@@ -7,6 +7,7 @@
 
   roles:
     - pre_install/setup_main_debian_repo
+    - maintenance/flush_handlers
     - pre_install/setup_sudo
     - pre_install/setup_ansible_user
     - maintenance/ansible_ssh_keys

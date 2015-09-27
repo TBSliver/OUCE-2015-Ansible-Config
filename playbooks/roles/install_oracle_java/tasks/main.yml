@@ -1,0 +1,17 @@
+---
+
+- name: Accept Oracle Licence
+  debconf:
+    name: oracle-java8-installer
+    question: 'shared/accepted-oracle-license-v1-1'
+    # quoted otherwise it ends up as 'True'
+    value: 'true'
+    vtype: select
+
+- name: Install Oracle Java 8
+  apt:
+    name: oracle-java8-installer
+    state: latest
+    install_recommends: no
+    update_cache: yes
+    cache_valid_time: 3600

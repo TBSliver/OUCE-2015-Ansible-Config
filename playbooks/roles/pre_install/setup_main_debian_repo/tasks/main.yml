@@ -9,6 +9,3 @@
     mode: 0644
   notify:
     - apt update
-
-# immediately flush all notifiers, as we need this updated immediately
-- meta: flush_handlers

@@ -13,6 +13,3 @@
     - "{{ opennms_apt[ opennms_apt_source ] }}"
   notify:
     - apt update
-
-# immediately flush the notifier
-- meta: flush_handlers
