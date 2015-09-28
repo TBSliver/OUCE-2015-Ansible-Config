@@ -1,0 +1,9 @@
+---
+
+- name: Install postgres
+  apt:
+    pkg: postgresql-9.1
+    state: latest
+    install_recommends: no
+    update_cache: yes
+    cache_valid_time: 3600

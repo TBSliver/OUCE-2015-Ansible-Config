@@ -1,0 +1,21 @@
+---
+
+- name: Restart postgres
+  action: service name=postgresql state=restarted
+
+- name: Setup opennms java
+  command: /usr/share/opennms/bin/runjava -S /usr/bin/java
+
+- name: Setup opennms db
+  command: /usr/share/opennms/bin/install -dis
+
+- name: Setup opennms iplike
+  command: /usr/sbin/install_iplike.sh
+
+- name: Restart opennms
+  service: name=opennms state=restarted
+  ignore_errors: yes
+
+- name: Start opennms
+  service: name=opennms state=started
+  ignore_errors: yes

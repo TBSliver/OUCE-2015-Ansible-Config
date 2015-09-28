@@ -1,0 +1,5 @@
+---
+
+- include: install_mta.yml
+- include: install_opennms_tools.yml
+- include: install_opennms.yml

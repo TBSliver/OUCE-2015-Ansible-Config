@@ -1,0 +1,25 @@
+---
+# This will replace the standard default lines with the required trust lines for OpenNMS
+
+- name: Setup postgres local access
+  lineinfile:
+    dest: /etc/postgresql/9.1/main/pg_hba.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    insertafter: "{{ item.regexp }}"
+  with_items:
+    - {
+        regexp: '^local\s*all\s*all\s*peer$',
+        line: 'local   all             all                                     trust # the default method is peer'
+      }
+    - {
+        regexp: '^host\s*all\s*\s*all\s*127\.0\.0\.1/32\s*md5$',
+        line: 'host    all             all             127.0.0.1/32            trust # the default method is md5'
+      }
+    - {
+        regexp: '^host\s*all\s*all\s*::1\/128\s*md5$',
+        line: 'host    all             all             ::1/128                 trust # the default method is md5'
+      }
+  notify:
+    - Restart postgres
+

@@ -1,0 +1,4 @@
+---
+
+- include: install_postgres.yml
+- include: setup_postgres_access.yml

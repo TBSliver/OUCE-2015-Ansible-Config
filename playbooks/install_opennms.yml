@@ -10,3 +10,5 @@
     - setup_opennms_apt
     - maintenance/flush_handlers
     - install_oracle_java
+    - install_postgres
+    - install_opennms

@@ -1,0 +1,14 @@
+---
+
+- name: Install OpenNMS
+  apt:
+    name: opennms
+    state: latest
+    install_recommends: no
+    update_cache: yes
+    cache_valid_time: 3600
+  notify:
+    - Setup opennms java
+    - Setup opennms db
+    - Setup opennms iplike
+    - Start opennms

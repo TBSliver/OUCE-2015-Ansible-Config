@@ -1,0 +1,9 @@
+---
+
+- name: Install exim
+  apt:
+    name: exim4-daemon-light
+    state: latest
+    install_recommends: no
+    update_cache: yes
+    cache_valid_time: 3600
