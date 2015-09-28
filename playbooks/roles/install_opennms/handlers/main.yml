@@ -1,8 +1,5 @@
 ---
 
-- name: Restart postgres
-  action: service name=postgresql state=restarted
-
 - name: Setup opennms java
   command: /usr/share/opennms/bin/runjava -S /usr/bin/java
 
