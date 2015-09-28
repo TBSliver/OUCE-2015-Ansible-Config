@@ -1,5 +1,5 @@
 [opennms]
-127.0.0.1
+127.0.0.1 requisition_name=demo requisition_url=http://127.0.0.1:8000/requisitions/demo
 
 [opennms:vars]
 # choice of: default_wheezy, bytemark_wheezy, office_wheezy

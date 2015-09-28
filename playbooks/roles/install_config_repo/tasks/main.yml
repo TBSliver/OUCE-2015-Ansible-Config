@@ -1,0 +1,31 @@
+---
+
+- name: Get config files repo
+  remote_user: me
+  sudo: no
+  git:
+    repo: https://github.com/TBSliver/OUCE-2015-Config-Files.git
+    dest: /home/me/config-files
+    version: master
+    update: yes
+    accept_hostkey: yes
+
+- name: Link opennms folder
+  file:
+    path: /etc/opennms
+    src: /home/me/config-files/opennms
+    state: link
+
+- name: Fetch provisiond-configuration.xml template
+  fetch:
+    src: /etc/opennms/provisiond-configuration.xml.template.j2
+    dest: special/fetched
+    fail_on_missing: yes
+
+- name: Install provisiond-configuration.xml
+  template:
+    src: special/fetched/{{ inventory_hostname }}/etc/opennms/provisiond-configuration.xml.template.j2
+    dest: /etc/opennms/provisiond-configuration.xml
+    mode: 0644
+    owner: me
+    group: users

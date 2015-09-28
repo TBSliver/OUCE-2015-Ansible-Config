@@ -11,4 +11,5 @@
     - maintenance/flush_handlers
     - install_oracle_java
     - install_postgres
+    - install_config_repo
     - install_opennms
